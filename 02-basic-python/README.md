@@ -142,7 +142,8 @@ Larger and bigger programs are commonly written using source code files and are 
 
 
 ## Jupyter Notebooks
-We've prepared a notebook for the rest of this class. You should have already downloaded it as part of HW0. If not, get it [here](lab-1-notebook.ipynb), change to the appropriate directory, and run
+
+We've prepared a notebook for the rest of this class. You should have already downloaded it as part of HW0. If not, get it [here](lecture-02-notebook.ipynb), change to the appropriate directory, and run
 
 ```
 $ jupyter notebook
