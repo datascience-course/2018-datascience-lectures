@@ -6,13 +6,13 @@ Hi there, welcome to our first lab. Labs are meant to give you practical data sc
 
 Now it's time to run python! Open a terminal and execute:
 
-```
+```bash
 $ python
 ```
 
 You'll see something like that:
 
-```
+```bash
 $ python
 Python 3.6.3 |Anaconda custom (64-bit)| (default, Oct  6 2017, 12:04:38)
 [GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
@@ -23,7 +23,7 @@ What does this tell us? It shows us the version number of Python (3.6.3), and we
 
 There are two fundamental ways you can run Python: in interactive mode (what we're doing here) or in batch mode. In interactive mode you write your program interactively, i.e., each new statement is interpreted as you type it. If you just run ```python``` without any other parameter, you enter the **interactive** mode. Let's write our very first program:
 
-```
+```python
 >>> print("Hello World!")
 Hello World!
 ```
@@ -36,7 +36,7 @@ Print is a built-in function of python, there are several built-in functions, wh
 
 If you're familiar with Python, you might have seen this syntax:
 
-```
+```python
 >>> print "Hello World!"
 ```
 
@@ -44,13 +44,13 @@ This is not legal in Python 3 anymore, now all parameters of a function have to 
 
 Let's define our first variable. Type
 
-```
+```python
 >>> my_string_var = "Are you still spinning?"
 ```
 
 This statement is executed without any feedback. What you're doing here, intuitively, is that first, you create a new variable of type string with the name ```my_string_var```, and then you assign a value to it, "Are you still spinning?". We now can print this variable:
 
-```
+```python
 >>> print(my_string_var)
 Are you still spinning?
 ```
@@ -61,7 +61,7 @@ There are many different types of variables, not only strings. For example, Pyth
 
 Let's start with a simple example:
 
-```
+```python
 >>> a = 3
 >>> b = 2.5
 >>> c = a + b
@@ -73,7 +73,7 @@ Here we've created three variables (`a, b, c`) and executed an operation, the ad
 
 The data types of `a` and `b`, however, are subtly different. `a` is an integer and `b` is a float. We can check the data type of any variable using the `type()` function:
 
-```
+```python
 >>> a = 3
 >>> type(a)
 <class 'int'>
@@ -100,7 +100,7 @@ Play around with data types and operations. Try the following things:
 
 For now, though, let's look at another way to run python: by executing a file. Exit the interactive environment, by calling the exit function:
 
-```
+```python
 exit()
 ```
 
@@ -124,7 +124,7 @@ Here we've also defined or first own function! We'll go into details about funct
 
 Now, run
 
-```
+```bash
 $ python first_steps.py
 6
 28.44
@@ -145,7 +145,7 @@ Larger and bigger programs are commonly written using source code files and are 
 
 We've prepared a notebook for the rest of this class. You should have already downloaded it as part of HW0. If not, get it [here](lecture-02-notebook.ipynb), change to the appropriate directory, and run
 
-```
+```bash
 $ jupyter notebook
 ```
 
