@@ -14,12 +14,12 @@ You'll see something like that:
 
 ```
 $ python
-Python 3.5.1 |Continuum Analytics, Inc.| (default, Jun 15 2016, 16:14:02)
-[GCC 4.2.1 Compatible Apple LLVM 4.2 (clang-425.0.28)] on darwin
+Python 3.6.3 |Anaconda custom (64-bit)| (default, Oct  6 2017, 12:04:38)
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
-What does this tell us? It shows us the version number of Python (3.5.1), and we can see that we've installed the Anaconda version from Continuum Analytics. At the end of this statement, you see the thre >>> signs: these indicate a promt, but it looks different from your console promt ($), to indicate you're in an interactive python environment.
+What does this tell us? It shows us the version number of Python (3.6.3), and we can see that we've installed Anaconda. At the end of this statement, you see the thre >>> signs: these indicate a promt, but it looks different from your console promt ($), to indicate you're in an interactive python environment.
 
 There are two fundamental ways you can run Python: in interactive mode (what we're doing here) or in batch mode. In interactive mode you write your program interactively, i.e., each new statement is interpreted as you type it. If you just run ```python``` without any other parameter, you enter the **interactive** mode. Let's write our very first program:
 
@@ -31,7 +31,16 @@ Hello World!
 "Hello World!" is by tradition the very first program that you should write in a new programming language! And see, when we instructed python to print the text "Hello World!", it did just that.
 
 So, let's briefly take that statement apart: it contains a call to the "print" function and passes a parameter to that print function, the string "Hello World!". Given that information, python knows you want to print the string, and it does exactly that.
+
 Print is a built-in function of python, there are several built-in functions, which you can check out [here](https://docs.python.org/3/library/functions.html).
+
+If you're familiar with Python, you might have seen this syntax:
+
+```
+>>> print "Hello World!"
+```
+
+This is not legal in Python 3 anymore, now all parameters of a function have to be passed in brackets.
 
 Let's define our first variable. Type
 
