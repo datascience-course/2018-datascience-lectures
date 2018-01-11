@@ -4,5 +4,6 @@ def doubleNumber(a):
     a *= 2
     return a;
 
+print(a)
 print(doubleNumber(3))
 print(doubleNumber(14.22))
