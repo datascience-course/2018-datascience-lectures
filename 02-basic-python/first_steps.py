@@ -6,4 +6,3 @@ def doubleNumber(a):
 
 print(doubleNumber(3))
 print(doubleNumber(14.22))
-print(a)

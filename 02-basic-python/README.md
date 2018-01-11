@@ -28,9 +28,11 @@ There are two fundamental ways you can run Python: in interactive mode (what we'
 Hello World!
 ```
 
+**Note:** If you copy this code, don't include the leading `>>>`. We only show these here because it allows us to distinguish input from output.
+
 "Hello World!" is by tradition the very first program that you should write in a new programming language! And see, when we instructed python to print the text "Hello World!", it did just that.
 
-So, let's briefly take that statement apart: it contains a call to the "print" function and passes a parameter to that print function, the string "Hello World!". Given that information, python knows you want to print the string, and it does exactly that.
+So, let's briefly take that statement apart: it contains a call to the `print()` function and passes a parameter to that print function, the string `Hello World!`. The string is enclosed in quotation marks `"`. Given that information, python knows you want to print the string, and it does exactly that.
 
 Print is a built-in function of python, there are several built-in functions, which you can check out [here](https://docs.python.org/3/library/functions.html).
 
@@ -40,7 +42,7 @@ If you're familiar with Python, you might have seen this syntax:
 >>> print "Hello World!"
 ```
 
-This is not legal in Python 3 anymore, now all parameters of a function have to be passed in brackets.
+This is Python 2 syntax and not legal in Python 3 anymore, now all parameters of a function have to be passed in brackets.
 
 Let's define our first variable. Type
 
@@ -90,7 +92,7 @@ Python supports many operations, including divisions, type conversions, etc. - w
 
 Play around with data types and operations. Try the following things:
 
- * Define a variable and assign an integer and a float. Define a new variable and assign the sum of the previous variables. What's the data type of the third variable?
+ * Define two variables and assign an integer to the first and a float to the second. Define a new variable and assign the sum of the previous two variables. What's the data type of the third variable?
  * Reassign a variable with a different data type, e.g., take one of your numerical variables and assign a string to it. What's the new data type?
  * Try what happens if you try to add a string to a string?
  * Try what happens if you add a string to a float or an integer.
@@ -136,8 +138,8 @@ Larger and bigger programs are commonly written using source code files and are 
 
 ### Exercise: Running Programs
 
- * Create a new file and use the simple function as a template. Modify the code to divide numbers by two instead of doubling them.
- * Try what happens if you change the indentation. Can you guess what's happening?
+ * Create a new file and use the simple function as a template. Modify the code to add two numbers instead of doubling a single number.
+ * Can you guess what would happen if you change the indentation? Try it out.
  * Try what happens if you print `a` at the very end of the program. Can you explain what's going on?
 
 
