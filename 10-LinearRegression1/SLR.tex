@@ -1,0 +1,96 @@
+\documentclass[letterpaper, 12pt]{amsart}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+
+\begin{document}
+\noindent COMP 5360 / MATH 4100:  Introduction to Data Science \\
+Notes on Simple Linear Regression \\
+February 8, 2018
+
+\bigskip
+
+\noindent {\bf Data.} We have $n$ samples $(x_1, y_1), \ (x_2, y_2),\ldots,(x_n, y_n)$.
+
+\bigskip
+
+\noindent {\bf Model.} $y \sim \beta_0 + \beta_1 x$ 
+
+\bigskip
+
+\noindent {\bf Goal.} Find the best values of $\beta_0$ and $\beta_1$, denoted $\hat{\beta}_0$ and $\hat{\beta}_1$, so that the prediction $y = \hat{\beta}_0 + \hat{\beta}_1 x$ ``best fits'' the data.
+
+\bigskip
+
+\noindent {\bf Theorem.} The best parameters in the \emph{least squares sense} are
+$$
+\hat{\beta}_1 = \frac{ \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) }{\sum_{i=1}^n (x_i - \overline{x})^2}
+\qquad \textrm{and} \qquad
+\hat{\beta}_0 = \overline{y} -  \hat{\beta}_1 \overline{x},  
+$$
+where $\overline{x} = \frac{1}{n} \sum_{i=1}^n x_i$ and $\overline{y} = \frac{1}{n} \sum_{i=1}^n y_i$. 
+
+\bigskip
+
+\noindent {\bf Least squares sense.} 
+Consider the errors, defined
+$$
+e_i = y_i - \beta_0 - \beta_1 x_i .
+$$
+The idea then is to minimize the total squared error over all $\beta_0$ and $\beta_1$. We define the total squared error, 
+$$
+J(\beta_0, \beta_1) = \sum_{i=1}^n e_i^2  =   \sum_{i=1}^n (y_i - \beta_0 - \beta_1 x_i)^2. 
+$$
+How do we minimize $J$ with respect to $\beta_0$ and $\beta_1$? Set the partial derivatives to zero and solve for the minimum values. Before we minimize $J$, let's do a couple of exercises to recall how we solve optimization problems like this in general. 
+
+\bigskip
+
+\noindent {\bf Exercise 1.} Minimize $f(x) = (x-2)^2$. 
+
+\bigskip
+
+\noindent {\bf Exercise 2.} Minimize $f(x,y) = x^2 + y^2$. 
+
+\bigskip
+
+\noindent {\bf Proof of theorem.} 
+We first set the partial derivative of $J(\beta_0, \beta_1)$ with respect to $\beta_0$ to 0 and evaluate at $( \hat{\beta}_0, \hat{\beta}_1 )$ to obtain 
+\begin{align*}
+& \frac{\partial J}{\partial \beta_0} (\hat{\beta}_0, \hat{\beta}_1) = \sum_{i=1}^n 2 ( y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i ) (-1)  = 0 \\
+\implies & \sum y_i - \sum \hat{\beta}_0 - \sum \hat{\beta}_1 x_i = 0 \\
+\implies & \sum y_i - n \hat{\beta}_0 - \hat{\beta}_1 \sum  x_i = 0 \\
+\implies & \frac{1}{n} \sum y_i - \hat{\beta}_0 - \hat{\beta}_1 \frac{1}{n} \sum  x_i = 0. 
+\end{align*}
+Now, using the definition of $\overline x$ and $\overline y$, we have
+\begin{equation} \label{e:beta0}
+\hat{\beta}_0  =  \overline{y}  - \hat{\beta}_1 \overline{x}. 
+\end{equation}
+So, if we know $\hat{\beta}_1$, then we can determine $\hat{\beta}_0$ from \eqref{e:beta0}. 
+
+
+To determine $\hat{\beta}_1$, we set the partial derivative of $J(\beta_0, \beta_1)$ with respect to $\beta_1$ to 0 and evaluate at $( \hat{\beta}_0, \hat{\beta}_1 )$ to obtain 
+\begin{align*}
+& \frac{\partial J}{\partial \beta_1} (\hat{\beta}_0, \hat{\beta}_1) = \sum_{i=1}^n 2 ( y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i ) (-x_i)  = 0 \\
+\implies & \sum x_i y_i - \hat{\beta}_0 \sum x_i - \hat{\beta}_1 \sum  x_i^2 = 0. 
+\end{align*}
+Using \eqref{e:beta0} and the definition of $\overline x$, we have
+\begin{align*}
+&  \sum x_i y_i - (\overline{y}  - \hat{\beta}_1 \overline{x}) n \overline{x}  -   \hat{\beta}_1 \sum  x_i^2 = 0 \\
+\implies &  \left( \sum  x_i^2 - n \overline{x}^2 \right) \hat{\beta}_1 =  \sum x_i y_i - n \overline{x} \overline{y} 
+\end{align*}
+This gives 
+\begin{equation} \label{e:beta1}
+\hat{\beta}_1 =  \frac{ \sum x_i y_i - n \overline{x} \overline{y}}{\sum  x_i^2 - n \overline{x}^2 }. 
+\end{equation}
+
+We now just have to manipulate the numerator and denominator in \eqref{e:beta1} to agree with the statement in the theorem. We compute
+\begin{align*}
+\sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y})
+&= \sum x_i y_i - \sum \overline{x} y_i - \sum x_i \overline{y} +  \sum \overline{x} \overline{y}   \\
+&= \sum x_i y_i - n  \overline{x} \overline{y} - n \overline{x} \overline{y} +  n \overline{x} \overline{y}   \\
+&= \sum x_i y_i - n  \overline{x} \overline{y}, 
+\end{align*}
+so the numerators agree. 
+To see that $\sum_{i=1}^n (x_i - \overline{x})^2 = \sum x_i^2  - n  \overline{x}^2 $ in the denominators, we just set $x_i = y_i$ in the above calculation.  $\square$
+\end{document}
+s
