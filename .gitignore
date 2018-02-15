@@ -101,3 +101,4 @@ ENV/
 .mypy_cache/
 
 .DS_Store
+12-Scraping-APIs/credentials_alex.py
